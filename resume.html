@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Iganago - Resume</title>
+    <style>
+        /* RESUME STYLES - Professional & Printable */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .resume-container {
+            max-width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height */
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        /* Header */
+        .resume-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #3b82f6;
+        }
+        
+        .name {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+        
+        .title {
+            font-size: 20px;
+            color: #3b82f6;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #64748b;
+        }
+        
+        /* Sections */
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            color: #1e293b;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Experience Items */
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+        }
+        
+        .job-header, .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        
+        .job-title, .edu-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        
+        .company, .institution {
+            color: #3b82f6;
+            font-weight: 500;
+        }
+        
+        .date {
+            color: #64748b;
+            font-size: 14px;
+            background: #f1f5f9;
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+        
+        li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 8px;
+            color: #475569;
+        }
+        
+        li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .skill-category h4 {
+            color: #1e293b;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Summary */
+        .summary {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #0ea5e9;
+        }
+        
+        .summary h3 {
+            color: #0369a1;
+            margin-bottom: 10px;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                padding: 20px;
+                max-width: 100%;
+                min-height: auto;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        /* Download Button */
+        .download-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: 25px;
+            }
+            
+            .name {
+                font-size: 28px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        
+        <!-- Header -->
+        <header class="resume-header">
+            <h1 class="name">Emmanuel Iganago</h1>
+            <h2 class="title">Frontend Developer & Web Creator</h2>
+            <div class="contact-info">
+                <div class="contact-item">📍 Nigeria</div>
+                <div class="contact-item">📧 emmanueliganago187@gmail.com</div>
+                <div class="contact-item">🌐 eiganago.netlify.app</div>
+                <div class="contact-item">📱 Available upon request</div>
+            </div>
+        </header>
+        
+        <!-- Summary -->
+        <section class="section">
+            <div class="summary">
+                <h3>Professional Summary</h3>
+                <p>A motivated Frontend Developer with hands-on experience in building responsive web applications and solving complex deployment challenges. Proven ability to implement interactive features, handle form submissions, and deploy projects using modern tools. Strong problem-solver with attention to detail and commitment to continuous learning.</p>
+            </div>
+        </section>
+        
+        <!-- Experience -->
+        <section class="section">
+            <h2 class="section-title">💼 Experience</h2>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <h3 class="job-title">Frontend Developer & Portfolio Specialist</h3>
+                        <p class="company">Freelance | Personal Projects</p>
+                    </div>
+                    <span class="date">2024 - Present</span>
+                </div>
+                <ul>
+                    <li>Developed and deployed a fully responsive portfolio website using HTML, CSS, and JavaScript</li>
+                    <li>Implemented complex form handling with Netlify Forms and FormSubmit integration</li>
+                    <li>Created interactive UI components with custom JavaScript animations and popup notifications</li>
+                    <li>Optimized website performance and deployed via GitHub with continuous deployment on Netlify</li>
+                    <li>Solved deployment challenges including CORS issues, rate limits, and form validation</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <h3 class="job-title">Web Development Learner & Builder</h3>
+                        <p class="company">Self-Directed Learning Journey</p>
+                    </div>
+                    <span class="date">2023 - 2024</span>
+                </div>
+                <ul>
+                    <li>Mastered HTML5 semantic markup and modern CSS including Flexbox and Grid layouts</li>
+                    <li>Developed proficiency in JavaScript for DOM manipulation and form handling</li>
+                    <li>Gained expertise in Git version control and GitHub repository management</li>
+                    <li>Learned responsive web design principles and mobile-first development approach</li>
+                    <li>Built multiple web projects with focus on user experience and clean code</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Education -->
+        <section class="section">
+            <h2 class="section-title">🎓 Education & Learning</h2>
+            
+            <div class="education-item">
+                <div class="edu-header">
+                    <div>
+                        <h3 class="edu-title">Frontend Web Development</h3>
+                        <p class="institution">Practical Project-Based Learning</p>
+                    </div>
+                    <span class="date">2023 - Present</span>
+                </div>
+                <p>Hands-on learning through building real-world projects. Focused on mastering modern web technologies by solving actual development challenges and implementing production-ready solutions.</p>
+            </div>
+            
+            <div class="education-item">
+                <div class="edu-header">
+                    <div>
+                        <h3 class="edu-title">Continuous Technical Education</h3>
+                        <p class="institution">Online Documentation & Developer Resources</p>
+                    </div>
+                    <span class="date">Ongoing</span>
+                </div>
+                <p>Regular study of MDN Web Docs, Stack Overflow solutions, and technical documentation. Staying updated with web standards and best practices through developer communities.</p>
+            </div>
+        </section>
+        
+        <!-- Skills -->
+        <section class="section">
+            <h2 class="section-title">🛠️ Technical Skills</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Frontend Development</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Responsive Design</span>
+                        <span class="skill-tag">DOM Manipulation</span>
+                        <span class="skill-tag">UI/UX Principles</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Tools & Deployment</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">Netlify</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Chrome DevTools</span>
+                        <span class="skill-tag">FormSubmit</span>
+                        <span class="skill-tag">Google Forms API</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Core Abilities</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Debugging</span>
+                        <span class="skill-tag">Attention to Detail</span>
+                        <span class="skill-tag">Self-Motivation</span>
+                        <span class="skill-tag">Fast Learning</span>
+                        <span class="skill-tag">Technical Research</span>
+                        <span class="skill-tag">Project Persistence</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects -->
+        <section class="section">
+            <h2 class="section-title">🚀 Key Project</h2>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <h3 class="job-title">E.Iganago Portfolio Website</h3>
+                        <p class="company">Full-stack Frontend Project</p>
+                    </div>
+                    <span class="date">2024</span>
+                </div>
+                <ul>
+                    <li><strong>Technologies:</strong> HTML5, CSS3, JavaScript, Netlify, GitHub, FormSubmit</li>
+                    <li><strong>Features:</strong> Responsive design, interactive contact form with real-time validation, custom JavaScript animations, dark/light theme detection</li>
+                    <li><strong>Solved:</strong> Form submission challenges, rate limit issues, CORS configuration, deployment optimization</li>
+                    <li><strong>Live:</strong> eiganago.netlify.app</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Footer Note -->
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; text-align: center; color: #64748b; font-size: 14px;">
+            <p>References and additional projects available upon request</p>
+            <p style="margin-top: 5px;">Last Updated: February 2024</p>
+        </footer>
+    </div>
+</body>
+</html>

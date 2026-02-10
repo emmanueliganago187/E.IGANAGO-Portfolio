@@ -172,7 +172,13 @@ h5 {
     fill: white;
 }
 
-.btresume {
+.download {
+    width: 20px;
+    fill: rgb(13, 27, 42);
+}
+
+.btresume{
+    display: flex;
     padding-top: 16px;
     padding-bottom: 20px;
     border: 2px solid rgb(13, 27, 42);
@@ -185,8 +191,8 @@ h5 {
 }
 
 .btresume:hover {
-    background-color: rgb(13, 27, 42);
-    color: white;
+    box-shadow: 1px 2px 6px 3px rgb(13, 27, 42);
+    border: none;
 }
 
 .sectiondiv12 {
@@ -403,6 +409,10 @@ h5 {
 
 .GLD {
     display: none;
+}
+
+.GH {
+    margin: 0;
 }
 
 .form {
@@ -1406,9 +1416,20 @@ body.dark-theme .btresume {
     border: 2px solid white;
 }
 
+body.dark-theme .download {
+    fill: white;
+}
+
+body.dark-theme .download:hover {
+    fill: white;
+}
+
+
 body.dark-theme .btresume:hover {
-    background-color: white;
-    color: rgb(13, 27, 42);
+    background-color: rgb(13, 27, 42);
+    color: white;
+    border: none;
+    box-shadow: 1px 2px 7px 2px white;
 }
 
 body.dark-theme .sectiondiv12 {
