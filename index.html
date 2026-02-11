@@ -310,18 +310,13 @@
             </div>
           </div>
         </div>
-        <form class="form" id="contactForm" method="POST" data-netlify="true" netlify>
-          <!-- REQUIRED for Netlify Forms -->
-          <input type="hidden" name="form-name" value="contactForm">
-          
-          <!-- Your fields (NO changes needed) -->
-          <input type="text" class="visitorname" name="name" placeholder="Full Name..." required>
-          <input type="email" class="visitormail" name="email" placeholder="Email..." required>
-          <textarea class="message" name="message" placeholder="Message....." required></textarea>
-          
-          <!-- Submit button -->
-          <button type="submit" class="messagebtn">Submit</button>
-        </form>
+        <form class="form" id="contactForm" name="contactForm" method="POST" netlify>
+    <input type="hidden" name="form-name" value="contactForm">
+    <input type="text" class="visitorname" name="name" placeholder="Full Name..." required>
+    <input type="email" class="visitormail" name="email" placeholder="Email..." required>
+    <textarea class="message" name="message" placeholder="Message....." required></textarea>
+    <button type="submit" class="messagebtn">Submit</button>
+</form>
       </div>
     </section>
     <footer>
